@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 void fusion(int tableau[],int deb1,int fin1,int fin2)
@@ -16,7 +17,7 @@ void fusion(int tableau[],int deb1,int fin1,int fin2)
         
         table1=(int*)malloc((fin1-deb1+1)*sizeof(int));
 
-        //on recopie les éléments du début du tableau
+        //on recopie les Ã©lÃ©ments du dÃ©but du tableau
         for(i=deb1;i<=fin1;i++)
             {
             table1[i-deb1]=tableau[i];
@@ -24,23 +25,23 @@ void fusion(int tableau[],int deb1,int fin1,int fin2)
                         
         for(i=deb1;i<=fin2;i++)
             {        
-            if (compt1==deb2) //c'est que tous les éléments du premier tableau ont été utilisés
+            if (compt1==deb2) //c'est que tous les Ã©lÃ©ments du premier tableau ont Ã©tÃ© utilisÃ©s
                 {
-                break; //tous les éléments ont donc été classés
+                break; //tous les Ã©lÃ©ments ont donc Ã©tÃ© classÃ©s
                 }
-            else if (compt2==(fin2+1)) //c'est que tous les éléments du second tableau ont été utilisés
+            else if (compt2==(fin2+1)) //c'est que tous les Ã©lÃ©ments du second tableau ont Ã©tÃ© utilisÃ©s
                 {
-                tableau[i]=table1[compt1-deb1]; //on ajoute les éléments restants du premier tableau
+                tableau[i]=table1[compt1-deb1]; //on ajoute les Ã©lÃ©ments restants du premier tableau
                 compt1++;
                 }
             else if (table1[compt1-deb1]<tableau[compt2])
                 {
-                tableau[i]=table1[compt1-deb1]; //on ajoute un élément du premier tableau
+                tableau[i]=table1[compt1-deb1]; //on ajoute un Ã©lÃ©ment du premier tableau
                 compt1++;
                 }
             else
                 {
-                tableau[i]=tableau[compt2]; //on ajoute un élément du second tableau
+                tableau[i]=tableau[compt2]; //on ajoute un Ã©lÃ©ment du second tableau
                 compt2++;
                 }
             }
